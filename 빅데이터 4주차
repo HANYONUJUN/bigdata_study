@@ -1,0 +1,44 @@
+데이터프레임의 내용을 일부 확인
+head() -> 처음 5개의 행
+tail() -> 마지막 5개의 행
+
+데이터프레임의 기술통계 정보 확인
+describe() -> 기술통계 확인
+
+데이터프레임의 각 열이 가지고 있는 원소 개수 확인
+count() -> 각 열이 가지는 원소 개수 확인
+
+각 열 데이터의 고유 값 함수
+value_counts()
+
+요약 정보 함수
+info()
+
+통계 정보 함수
+-평균값 반환 함수: mean()
+-최대값: max()
+-최소값: min()
+-표준편차: std()
+-상관관계: corr()
+
+드롭(drop)
+- drop : 결측치가 나온 열이나 행을 삭제
+- dropna를 사용하여 nan이 있는 모든 데이터의 행을 삭제-
+- 매개변수 how로 조건에 따라 결측치를 지움(all,any)
+- all은 행에 있는 모든값이 nan일 때 해당 행을 삭제
+- any는 하나의 nan만 있어도 삭제
+- dropna의 defualt -> any
+- 매개변수 thresh 데이터의 개수를 기준으로 삭제
+
+채우기
+fill: 비어있는 값을 채움
+fillna 함수 사용 ex)df.fillna(0)
+fillna는 nan값을 지정해준 값으로 치환가능
+fillna(method="ffill", inplace= True) -> 바로 앞에 있는 값으로 치환
+fillna(method="bfill", inplace= True) -> 바로 뒤에 있는 값으로 치환
+
+중복 데이터 처리
+duplicated(): 전에 나온 행들과 비교해 중복되는 행이면 true반환
+처음 나오는 행에 대해서는 false반환
+drop_duplicates() 중복되는 행을 제거하고 고유한 관측값을 가진 행들(열 이름 기준으로 판별 가능)
+
